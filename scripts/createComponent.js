@@ -31,13 +31,12 @@ function run(componentName) {
 
     console.log(`Creating component '${componentName}'`);
 
-    // if (componentAlreadyExists(componentName)) {
-    //     console.log(`Component '${componentName}' already exists. Exiting.`);
-    //     return 1;
-    // }
+    if (componentAlreadyExists(componentName)) {
+        console.log(`Component '${componentName}' already exists. Exiting.`);
+        return 1;
+    }
 
-    // const path = createComponentDirectory(componentName);
-    const path = `${COMPONENTS_DIR_PATH}/${componentName}`;
+    const path = createComponentDirectory(componentName);
     createFiles(componentName, path);
 }
 
