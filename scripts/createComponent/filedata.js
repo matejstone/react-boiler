@@ -1,5 +1,6 @@
 function get_react_component_file_data(componentName) {
     return `import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Styled${componentName} = styled.div\`
