@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Price from 'components/Price';
 
 const itemSize = '140px;'
 
-const StyledItem = styled.div`
+const StyledItem = styled(Link)`
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -14,6 +15,7 @@ const StyledItem = styled.div`
     width: ${itemSize};
     border: 1px solid #ccc;
     margin: 6px 4px;
+    background-color: #fff;
 
     &:hover {
         box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -24,7 +26,7 @@ const ImageWrapper = styled.div`
     flex: 0 0 ${itemSize};
     background-color: #eee;
     position: relative;
-    background-image: url(${props => props.image});
+    background-image: url(/${props => props.image});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -72,7 +74,8 @@ export default class SmallItem extends Component {
         const { id, name, image, price } = this.state.item;
 
         return (
-            <StyledItem>
+            <StyledItem
+                to={`/product/${id}`}>
                 <ImageWrapper
                     image={image}
                 />

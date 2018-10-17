@@ -11,6 +11,7 @@ const StyledItem = styled.div`
     border: 1px solid #ccc;
     margin: 6px 4px;
     height: 250px;
+    background-color: #fff;
 
     &:hover {
         box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -21,20 +22,20 @@ const ImageWrapper = styled.div`
     flex: 0 0 30%;
     background-color: #eee;
     position: relative;
-    background-image: url(${props => props.image});
+    background-image: url(/${props => props.image});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
 `;
 
 const MetaData = styled.div`
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
 `;
 
 const ItemName = styled.div`
-    font-size: 20px;
+    font-size: 26px;
     color: #666;
 `;
 

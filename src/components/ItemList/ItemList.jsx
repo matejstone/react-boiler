@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+
+import equal from 'fast-deep-equal';
+
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+import fakeData from 'fakeData';
 
 import { SmallItem } from 'components/Item';
 import ErrorMessage from 'components/ErrorMessage';
@@ -10,7 +15,7 @@ const StyledItemList = styled.div`
     flex-wrap: wrap;
 `;
 
-export default class ItemList extends Component {
+class ItemList extends Component {
 	static defaultProps = {
 		items: [],
 	};
@@ -22,13 +27,22 @@ export default class ItemList extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			items: this.props.items,
-		};
+        this.state = {
+            items: this.props.items,
+        };
 	}
 
+    componentDidUpdate(prevProps) {
+        if (!equal(prevProps.items, this.props.items)) {
+            this.setState({
+                items: this.props.items,
+            });
+        }
+        
+    }    
+
     render() {
-    	if (this.state.items.length < 1) {
+    	if (this.state.items === undefined || this.state.items.length < 1) {
     		return (
     			<ErrorMessage>
     				No items found
@@ -39,11 +53,11 @@ export default class ItemList extends Component {
 
         return (
             <StyledItemList>
-            	{this.state.items.map(item => {
+            	{this.state.items.map(product => {
             		return (
             			<SmallItem
-            				key={item.id}
-            				item={item}
+            				key={product.id}
+            				item={product}
             			/>
             		);
             	})}
@@ -51,3 +65,5 @@ export default class ItemList extends Component {
         );
     }
 }
+
+export default ItemList;

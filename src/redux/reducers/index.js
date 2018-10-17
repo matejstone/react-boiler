@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
-import samples from "./samples";
+import filters from "./filters";
+import products from "./products";
 
-export default combineReducers({ samples });
+export default combineReducers({ filters, products });

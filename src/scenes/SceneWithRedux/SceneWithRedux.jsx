@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { getCodeboxValueById } from 'redux/selectors';
-
-import {
-    sampleAction,
-} from 'redux/actions';
+import { getSampleValueById } from 'redux/selectors';
+import { sampleAction } from 'redux/actions';
 
 export class SceneWithRedux extends Component {
 	static propTypes = {

@@ -4,11 +4,11 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import ErrorMessage from './ErrorMessage.jsx';
+import Page from './Page.jsx';
 
-storiesOf('ErrorMessage', module)
+storiesOf('Page', module)
   .add('with text', () => (
-    <ErrorMessage>
-        ErrorMessage content
-    </ErrorMessage>
+    <Page>
+        Page content
+    </Page>
   ));

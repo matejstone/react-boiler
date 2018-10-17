@@ -10,3 +10,9 @@
 // 		: {};
 // };
 //
+
+export const getProducts = store => store.products;
+
+export const getProductsByCategory = (store, categoryFilter) => {
+	return getProducts(store).filter(product => product.category === categoryFilter);
+};

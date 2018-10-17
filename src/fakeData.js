@@ -50,7 +50,7 @@ const products = [
         short_description: 'Car goes beep beep',
         description: 'Beep, a car for city driving',
         price: 12000.00,
-        image: '/car-slow.png',
+        image: 'car-slow.png',
         category: 'cars',
     },
     {

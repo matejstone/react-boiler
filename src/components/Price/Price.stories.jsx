@@ -8,7 +8,7 @@ import Price from './Price.jsx';
 
 storiesOf('Price', module)
   .add('with text', () => (
-    <Price>
+    <Price amount={100.99}>
         Price content
     </Price>
   ));

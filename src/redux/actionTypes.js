@@ -1,1 +1,4 @@
 export const SAMPLE_ACTION = "SAMPLE_ACTION";
+
+export const SET_CATEGORY_FILTER = "SET_CATEGORY_FILTER";
+export const SET_PRODUCTS = "SET_PRODUCTS";
